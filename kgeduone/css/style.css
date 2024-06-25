@@ -1,0 +1,66 @@
+@charset "utf-8"
+body, ul, ol, h1, h2, h3, h4, h5, h6, p {
+	margin: 0px;
+	padding: 0px;
+}
+h1 {
+	font-size: 16px;
+}
+ul, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #000
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+.start {
+	background: url(../images/bg_contents1.jpg)center center;
+	width: 1920px;
+	height : 1080px;
+}
+.start header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 7%;
+	height: 83px;
+	align-items: center;
+}
+.start header .header_right {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+.start header .header_right nav ul {
+	display: flex;
+}
+.start header .header_right nav ul li a {
+	display: block;
+	line-height: 83px;
+	padding: 0 10px;
+	font-size: 17px;
+	color: #fff;
+}
+.start .keytext {
+	margin: 0 auto;
+	margin-top: 150px;
+	width: 1160px;
+}
+.start .keytext h2 {
+	line-height: 63px;
+	font-size: 46px;
+	color: #fff
+}
+.start .keytext p {
+	line-height: 28px;
+	font-size: 13px;
+	color: #fff;
+	font-weight: 400;
+}

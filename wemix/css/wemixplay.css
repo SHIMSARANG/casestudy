@@ -1,0 +1,370 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a, span {
+	text-decoration: none;
+	color: #fff;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+:root { /* added, CSS 변수 선언 ---> SCSS 문법 */
+	--swiper-theme-color: #fff;
+}
+#start {
+	background-color: #001127;
+}
+#start header .header_top .inner {
+	display: flex;
+	position: relative;
+	margin: 0 auto;
+	justify-content: flex-end;
+	align-items: center;
+	max-width: 1300px; /**/
+	height: 4.5em; /* 72px */
+	border-bottom: 1px solid rgba(255,255,255,.2);
+}
+#start header .header_top .inner .tab {
+	position: absolute;
+	left: 0;
+}
+#start header .header_top .inner .logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 169px;
+	height: 36px;
+	background: url(../images/wemixplay3.png) no-repeat center center;
+	background-size: cover;
+}
+#start header .header_top .inner .lang ul {
+	display: flex;
+}
+#start header .header_top .inner .lang ul li a {
+	display: block;
+	line-height: 32px;
+	padding: 0 16px;
+	font-size: 0.9em;
+	font-weight: 600;
+	color: #ccc;
+	border-radius: 14px;
+	background-color: #001127;
+}
+#start header .header_top .inner .lang ul li.active a {
+	color: #fff;
+	background-color: #ff00bf;
+}
+#start header .header_middle {
+	position: relative;
+}
+#start header .header_middle .inner {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+#desktop {
+	position: absolute;
+	left: 50%;
+	z-index: 1000;
+	transform: translateX(-50%);
+}
+#desktop > ul {
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+#desktop > ul > li > a {
+	display: block;
+	white-space: nowrap;
+	line-height: 4em;
+	padding: 0 3.3125em;/* 0 53px */
+	font-size: 1.09em;
+	letter-spacing: -0.05em;
+	color: #ccc;
+}
+#desktop > ul > li:hover > a,
+#desktop > ul > li.active > a {
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0px 0px 4px #fff;
+}
+#desktop > ul > li > a.game {
+	background: url(../images/icon_arrow1.png) no-repeat right 30px center;
+	border-bottom: 5px solid #ccc;
+}
+#desktop li ul {
+	display: flex;
+	position: absolute;
+	left: 0.5em; /* 8px */
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+#desktop li ul.active {
+	height: 4.125em; /* 45px */
+}
+#desktop li ul a {
+	display: block;
+	white-space: nowrap;
+	line-height: 4.125em; /* 45px */
+	padding: 0 0.625em; /* 0 30px */
+	font-size: 1em;
+	letter-spacing: -0.05em;
+	color: #fff;
+}
+#desktop  li ul  a:hover,
+#desktop  li ul  a.active {
+	border-radius: 0.9375em;
+	padding: 0 0.625em; 
+	background-color: rgba(255, 255, 255, .1);
+}
+#mobile {
+	display: none;
+	position: fixed;
+	right: 0.625em;
+	top: 0;
+	z-index: 1000;
+	padding: 0 1.25em 1.875em 1.25em;
+	width: 52%;
+	min-width: 250px;
+	height: 100vh;
+	background-color: #fff;
+}
+#mobile.active {
+	display: block;
+}
+#mobile > ul {
+	margin-top: 15vh;
+	height: 70vh;
+	overflow-y: auto;
+}
+#mobile > ul > li {
+	border-top: 1px solid #eaeaea;
+}
+#mobile > ul > li:first-child {
+	border-top: none;
+}
+#mobile > ul > li > a {
+	display: block;
+	padding: 18px 0 18px 10px;
+	text-indent: 11px;
+	color: #000;
+}
+#mobile > ul > li.active > a {
+	background-color: #24bbaf;
+	color: #fff;
+}
+#mobile ul ul {
+	display: none;
+	padding: 6px 0;
+	background-color: #f4f4f4;
+}
+#mobile ul ul a {
+	display: block;
+	line-height: 2;
+	text-indent: 20px;
+	color: #000;
+}
+.dim {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,.6);
+}
+.dim.active {
+	display: block;
+}
+#start header .header_middle .menu_bg {
+	position: absolute;
+	left: 0;
+	top: 4.75em;
+	width: 100%;
+	height: 0;
+	background-color: rgba(255, 255, 255, .1)
+}
+#start header .header_middle .menu_bg.active {
+	height: 66px;
+	transition: height 0.3s;
+}
+#start .slider_area {
+	overflow: hidden;
+}
+#start .slider_area .main_slider {
+	position: relative;
+	margin: 0 auto;
+	padding: 11.875em 0 6em; /* 190px 0 96px */
+	max-width: 1300px;
+	overflow: visible;
+}
+#start .slider_area .main_slider .swiper-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#start .slider_area .main_slider .swiper-container .swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 31.25em; /**/
+	object-fit: cover;
+}
+#start .slider_area .main_slider .swiper-pagination {
+	position: absolute;
+	bottom: 32px;
+}
+.main_slider .swiper-pagination .swiper-pagination-bullet { /* added */
+	/* display: inline-block; */
+	margin: 0 8px;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	opacity: 0.3;
+	border-radius: 10px;
+	
+}
+.main_slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active { /* added */
+	background-color: var(--swiper-theme-color);
+	opacity: 1;
+}
+.main_slider .controller .prev,
+.main_slider .controller .next { /* modified */
+	position: absolute;
+	top: 50%;
+	width: 4.2em;
+	height: 4.2em;
+	overflow: hidden;
+	text-indent: -9999px;
+	transform: translateY(-50%);
+}
+.main_slider .controller .prev.active,
+.main_slider .controller .next.active,
+.main_slider .controller .prev:hover ,
+.main_slider .controller .next:hover {
+	display: block;
+	box-sizing: border-box;
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, .1);
+}
+.main_slider .controller .prev { /* modified */
+	left: -100px;
+	background: url(../images/btn_left.png) no-repeat center center;
+	background-size: 45%;
+}
+.main_slider .controller .next { /* modified */
+	right: -134px;
+	background: url(../images/btn_right.png) no-repeat center center;
+	background-size: 45%;
+}
+#start .slider_area .main_slider .text_box {
+	position: absolute;
+	left: 0;
+	bottom: 30%;
+	padding: 40px 30px 30px 20px;
+	z-index: 10;
+	pointer-events: none;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+#start .slider_area .main_slider .text_box .title {
+	display: block;
+	padding-top: 16px;
+	font-size: 2.05em;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px #555;
+	color: #fff;
+}
+#start .slider_area .main_slider .text_box .content {
+	display: block;
+	padding-top: 20px;
+	font-size: 1.05em;
+	color: #ccc;
+}
+#start .slider_area .main_slider .link {
+	display: inline-block;
+	position: absolute;
+	left: 243px;
+	bottom: 27%;
+	line-height: 56px;
+	padding: 0 18px;
+	font-size: 0.98em;
+	font-weight: 700;
+	border-radius: 14px;
+	background-color: #e12172;
+	z-index: 20;
+}
+#start .slider_area .main_slider .link:hover {
+	background-color: #00cbeb;
+}
+.main_slider .account { /* added */
+	position: absolute;
+	right: -5%;
+	top: 50%;
+	color: #ccc;
+	font-size: 1.1em;
+	font-weight: 300;
+	transform: translateY(-50%);
+}
+.main_slider .account .current { /* added */
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 1300px) {
+	#header {
+		font-size: 0.875em;
+	}
+	#desktop {
+		display: none;
+	}
+	#header .tab {
+		display: block;
+	}
+	#start header .header_top .inner .tab {
+		left: 40px;
+	}
+	#start header .header_top .inner .lang {
+		margin-right: 10px;
+	}
+	#start .slider_area .main_slider {
+		padding: 6em 0 6em
+	}
+
+	/*
+	.tab을 클릭하면 #mobile을 보이고, .dim을 보이도록 해야 합니다.
+	.dim을 클릭하면 #mobile을 가리고, .dim을 가리도록 해야 합니다. 
+	#mobile이 노출될 경우에는 2depth 기능을 구현하면 됩니다.
+	 */
+}
+@media only screen and (max-width: 560px) {
+	#start header .header_top .inner .logo {
+		/* left: auto;
+		right: 30px;
+		transform: translate(0, -50%); */
+		/* display: none; */
+		background-size: 80%;
+	}
+	#start header .header_top .inner .lang  ul li a {
+		/* display: none; */
+		line-height: 24px;
+		padding: 0 12px;
+		font-size: 0.8125em;
+	}
+}

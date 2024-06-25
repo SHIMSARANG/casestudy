@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+#start {
+	position: relative;
+	height: 100vh;
+}
+#start header {
+	display: flex;
+	position: fixed;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 40px 7vw 26px;
+	box-sizing: border-box;
+}
+#start header nav {
+	margin-right: 75px;
+}
+#start header nav ul {
+	display: flex;
+}
+#start header nav ul a {
+	display: block;
+	padding: 0 12px;
+	font-size: 1.15em;
+	color: #fff;
+}
+#start header a.tab {
+	position: absolute;
+	right: 7vw;
+	z-index: 10000;
+}
+#start .slider {
+	height: 100%;
+}
+#start .slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#start .slider .keytext {
+	position: absolute;
+	left: 50%;
+	top: 25vh;
+	width: 1200px;
+	color: #fff;
+	transform: translateX(-50%);
+}
+#start .slider .keytext h2 {
+	line-height: 60px;
+	font-size: 3.3em;
+	margin-bottom: 27px;
+}
+#start .slider .keytext h2 span {
+	font-weight: 400;
+}
+#start .slider .keytext p {
+	line-height: 27px;
+	font-size: 0.92em;
+	font-weight: 300;
+}
+#section {
+	padding: 100px 0 200px;
+	background: url(../images/bg_contents2.jpg);
+	background-size: cover;
+}
+#section .heading {
+	text-align: center;
+	padding: 90px 0 80px;
+}
+#section .heading span {
+	display: block;
+	font-size: 1.1em;
+	color: #888;
+}
+#section .heading strong {
+	display: block;
+	font-size: 1.97em;
+	font-weight: 600;
+}
+#section .content {
+	margin: 0 auto;
+	max-width: 1180px;
+	padding-top: 80px;
+}
+#section .content ul {
+	display: flex;
+	justify-content: center;
+	gap: 25px;
+}
+#section .content ul li:nth-child(2) {
+	margin-top: 58px;
+}
+#section .content img {
+	width: 100%;
+}
+#section .content .desc {
+	position: relative;
+	top: -20px;
+	margin: 0 auto;
+	padding: 30px 18px;
+	width: 97%;
+	background-color: #fff;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+}
+#section .content ul li:hover .desc {
+	border-color: #693eaa;
+}
+#section .content .desc span.label {
+	position: absolute;
+	top: -13px;
+	padding: 8px 8px;
+	font-size: 0.95em;
+	color: #fff;
+	background-color: #693eaa;
+}
+#section .content .desc h4 {
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+#section .content .desc h4 span {
+	color: #693eaa;
+}
+#section .content .desc p {
+	font-size: 0.82em;
+	color: #aaa;
+}

@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+.start {
+	position: relative;
+	height: 100vh;
+	overflow-x: hidden;
+}
+.start header {
+	display: flex;
+	position: absolute;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10vw;
+	width: 100%;
+	padding: 40px 134px 26px 134px;
+	box-sizing: border-box;
+}
+.start header nav {
+	margin-right: 80px;
+}
+.start header nav ul {
+	display: flex
+}
+.start header nav ul a {
+	display: block;
+	padding: 0 10px;
+	font-size: 1.14em;
+	color: #fff;
+}
+.start header .tab {
+	position: absolute;
+	right: 8%;
+	z-index: 10000;
+}
+.slider {
+	height: 100%;
+}
+.slider .keytext {
+	position: absolute;
+	left: 50%;
+	top: 27vh;
+	width: 1160px;
+	color: #fff;
+	transform: translateX(-50%);
+}
+.slider .keytext h2 {
+	line-height: 60px;
+	font-size: 3.1em;
+	margin-bottom: 27px;
+}
+.slider .keytext h2 span {
+	font-weight: 400;
+}
+.slider .keytext p {
+	line-height: 27px;
+	font-size: 0.91em;
+}
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+section {
+	padding: 85px 0 200px;
+	background: url(../images/bg_contents2.jpg);
+}
+section .heading {
+	text-align: center;
+}
+section .heading span {
+	font-size: 0.89em;
+	color: #888;
+}
+section .heading h3 {
+	font-size: 1.95em;
+	font-weight: 800;
+}
+section .content {
+	margin: 0 auto;
+	padding-top: 75px;
+	max-width: 1180px;
+}
+section .content ul {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+}
+section .content ul li:nth-child(2) {
+	margin-top: 58px;
+}
+section .content img {
+	width: 100%;
+}
+section .content .desc {
+	position: relative;
+	top: -20px;
+	margin: 0 auto;
+	padding: 30px 18px;
+	width: 97%;
+	background-color: #fff;
+	border: 2px solid #693eaa;
+	box-sizing: border-box;
+}
+section .content .desc span.label {
+	position: absolute;
+	top: -13px;
+	padding: 8px 8px;
+	font-size: 0.95em;
+	color: #fff;
+	background-color: #693eaa;
+}
+section .content .desc h4 {
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+section .content .desc h4 span {
+	color: #693eaa;
+}
+section .content .desc p {
+	font-size: 0.8em;
+	color: #aaa;
+}

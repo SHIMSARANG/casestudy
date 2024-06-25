@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>wemixplay</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/wemixplay.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+$(function(){
+	let current;
+	let total;
+
+	const bannerSwiper=new Swiper(".mainSwiper",{
+		loop: true,
+		// autoplay: {
+		// 	delay: 5000
+		// },
+
+		navigation: {
+			nextEl: ".mainSwiper .swiper-button-next",
+			prevEl: ".mainSwiper .swiper-button-prev"
+		},
+
+		
+		pagination: { // added
+			el: ".mainSwiper .swiper-pagination",
+			clickable: true
+		},
+
+		on: {
+			init: function(){
+				$(".account .current").text(this.realIndex+1);
+				$(".account .total").text(this.slides.length);
+			},
+			slideChange: function(){
+				$(".account .current").text(this.realIndex+1);
+				$(".account .total").text(this.slides.length);
+			}
+		}
+
+	});
+
+	$(".main_slider .prev").click(function(e){ // added
+		e.preventDefault();
+		bannerSwiper.slidePrev();
+	});
+
+	$(".main_slider .next").click(function(e){ // added
+		e.preventDefault();
+		bannerSwiper.slideNext();
+	});
+
+	$(".lang li:first-child").addClass("active");
+
+	$(".lang li").click(function(e){
+		e.preventDefault();
+
+		$(".lang li").removeClass("active");
+		$(this).addClass("active");
+	});
+
+	$("#desktop > ul > li").hover(
+		function(){
+			if($(this).children().length == 2){
+				$("#desktop").addClass("active");
+				$(this).find("ul").addClass("active");
+				$(".menu_bg").addClass("active");
+			}
+		},
+		function(){
+			if($(this).children().length == 2){
+				$("#desktop").removeClass("active");
+				$(this).find("ul").removeClass("active");
+				$(".menu_bg").removeClass("active");
+			}
+		}
+	);
+
+	$("#desktop > ul > li > a").focusin(function(){
+		$(this).parent().addClass("active");
+
+		if($(this).parent().children().length == 2){
+			$("#desktop").addClass("active");
+			$(this).next().addClass("active");
+			$(".menu_bg").addClass("active");
+		}
+	});
+
+	$("#desktop > ul > li > a").focusout(function(){
+		if($(this).parent().children().length == 1){
+			$(this).parent().removeClass("active");
+		}
+	});
+
+	$("#desktop li li:last-child").focusout(function(){
+		$(this).parent().parent().removeClass("active");
+		$("#desktop").removeClass("active");
+		$(this).parent().removeClass("active");
+		$(".menu_bg").removeClass("active");
+	});
+
+	let winw;
+
+	$(window).resize(function(){
+		winw=$(window).width();
+	});
+
+	$(window).trigger("resize");
+
+	$(".inner .tab").click(function(e){
+		e.preventDefault();
+
+		if(winw < 1300){
+			$("#mobile").addClass("active");
+			$(".dim").addClass("active");
+		}
+	});
+
+	$(".dim").click(function(e){
+		e.preventDefault();
+
+		$("#mobile").removeClass("active");
+		$(".dim").removeClass("active");
+	});
+
+	$("#mobile > ul > li").click(function(e){
+		e.preventDefault();
+
+		if($(this).hasClass("active") == false){ // 닫혀진 상태
+			$("#mobile > ul > li").removeClass("active"); // 1Depth 전체 클래스 제거
+			$(this).addClass("active"); // 현재 1Depth 클래스 추가
+			$("#mobile ul ul").slideUp(300); // 2Depth 전체 닫기
+			$(this).find("ul").slideDown(300); // 현재 2Depth 열기
+		}
+
+		else{
+			$(this).removeClass("active");
+			$(this).find("ul").css({display: "none"});
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div id="start">
+		<header>
+			<div class="header_top">
+				<div class="inner">
+					<div class="tab"><a href=""><img src="images/icon_tab.png" alt="tab"></a></div>
+					<div class="logo"><h1><a href=""></a></h1></div>
+					<div class="lang">
+						<ul>
+							<li><a href="" class="active">KR</a></li>
+							<li><a href="">EN</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header_middle">
+				<div class="inner">
+					<nav id="desktop">
+						<ul>
+							<li>
+								<a href="" class="game">게임</a>
+								<ul>
+									<li><a href="">Featured</a></li>
+									<li><a href="">All Games</a></li>
+									<li><a href="">Best&New</a></li>
+									<li><a href="">News&Events</a></li>
+								</ul>
+							</li>
+							<li><a href="">토큰</a></li>
+							<li><a href="">게임파이</a></li>
+							<li><a href="">팬토큰</a></li>
+							<li><a href="">NFT New</a></li>
+							<li><a href="">커뮤니티</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="menu_bg"></div>
+			</div>
+		</header>
+		<nav id="mobile">
+			<ul>
+				<li>
+					<a href="" class="game">게임</a>
+					<ul>
+						<li><a href="">Featured</a></li>
+						<li><a href="">All Games</a></li>
+						<li><a href="">Best&New</a></li>
+						<li><a href="">News&Events</a></li>
+					</ul>
+				</li>
+				<li><a href="">토큰</a></li>
+				<li><a href="">게임파이</a></li>
+				<li><a href="">팬토큰</a></li>
+				<li><a href="">NFT New</a></li>
+				<li><a href="">커뮤니티</a></li>
+			</ul>
+		</nav>
+		<div class="dim"></div>
+		<div class="slider_area">
+			<div class="main_slider">
+				<div class="swiper-container mainSwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="images/slider4.png" alt="slider4"></div>
+						<div class="swiper-slide"><img src="images/slider5.png" alt="slider5"></div>
+						<div class="swiper-slide"><img src="images/slider6.png" alt="slider6"></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="controller">
+					<a href="" class="prev">previous</a>
+					<a href="" class="next">next</a>
+				</div>
+				<div class="account">
+					<span class="current">current</span> / <span class="total">total</span>
+				</div>
+				<div class="text_box">
+					<div class="box_logo"><img src="images/wemixplay4.png" alt="box_logo"></div>
+					<div class="title">Endless Real-time<br>Strategy Card Battle.</div>
+					<div class="content">실시간 무한 전략 카드 배틀</div>
+				</div>
+				<div class="link"><a href="">PLAY NOW</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
